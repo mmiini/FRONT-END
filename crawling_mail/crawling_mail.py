@@ -43,16 +43,16 @@ message = EmailMessage()
 message.set_content("오늘의 음악 순위를 알려드립니다.")
 
 message["Subject"] = "크롤링해서 메일보내기[김민경]"
-message["From"] = "pds08134@likelion.org"
-message["To"] = "kit@likelion.org"
+message["From"] = "##@likelion.org"
+message["To"] = "##@likelion.org"
 
 with open("rankresult.txt","rb") as txt:
     txt_file = txt.read()
 
 message.add_attachment(txt_file,maintype='txt',subtype='txt', filename=txt.name)
 
-smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
-smtp.login("pds08134@likelion.org","23709036")
+smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_POR)
+smtp.login("##@likelion.org","####")
 
-sendEmail("kit@likelion.org")
+sendEmail("##@likelion.org")
 smtp.quit    
